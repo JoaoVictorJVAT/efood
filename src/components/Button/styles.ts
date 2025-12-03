@@ -9,6 +9,7 @@ export const ButtonContainer = styled.button`
   font-family: Roboto;
   font-weight: bold;
   font-size: 14px;
+  width: 100%;
   padding: 4px 6px;
   text-decoration: none;
   cursor: pointer;

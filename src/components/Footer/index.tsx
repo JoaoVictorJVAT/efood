@@ -6,7 +6,7 @@ import twitter from '../../assets/images/twitter.png'
 
 const Footer = () => (
   <Container>
-    <Logo src={logo} alt="Cheese me up" />
+    <Logo src={logo} />
     <SocialLinks>
       <a href="#">
         <img src={facebook} alt="Facebook" />

@@ -2,17 +2,33 @@ import Button from '../Button'
 import Tag from '../Tag'
 import estrela from '../../assets/images/estrela.png'
 
-import { Card, Descricao, Titulo, Infos, Loja, Nota } from './styles'
+import {
+  Card,
+  Descricao,
+  Titulo,
+  Infos,
+  Loja,
+  Nota,
+  BotaoContainer
+} from './styles'
 
 type Props = {
   title: string
   image: string
   description: string
   infos: string[]
-  id?: string
+  id: string | number
+  avaliacao: number
 }
 
-const Store = ({ title, image, description, infos, id }: Props) => (
+const RestaurantCard = ({
+  title,
+  image,
+  description,
+  infos,
+  id,
+  avaliacao
+}: Props) => (
   <Card>
     <img src={image} alt={title} />
     <Infos>
@@ -25,22 +41,17 @@ const Store = ({ title, image, description, infos, id }: Props) => (
     <Loja>
       <Titulo>{title}</Titulo>
       <Nota>
-        <p>4.9</p>
+        <p>{avaliacao.toFixed(1)}</p>
         <img src={estrela} />
       </Nota>
     </Loja>
-
     <Descricao>{description}</Descricao>
-    {id === 'japonesa' ? (
-      <Button type="link" to="/perfil" title="Ver detalhes da loja">
+    <BotaoContainer>
+      <Button type="link" to={`/perfil/${id}`} title="Ver detalhes da loja">
         Saiba mais
       </Button>
-    ) : (
-      <Button type="button" title="Desabilitado">
-        Saiba mais
-      </Button>
-    )}
+    </BotaoContainer>
   </Card>
 )
 
-export default Store
+export default RestaurantCard

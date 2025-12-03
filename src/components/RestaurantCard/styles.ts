@@ -6,13 +6,16 @@ export const Card = styled.div`
   background-color: ${cores.branco};
   border: 0px 1px 1px 1px;
   position: relative;
+  display: flex;
+  flex-direction: column;
 
   ${TagContainer} {
     margin-right: 8px;
   }
 
   img {
-    max-width: 100%;
+    width: 472px;
+    height: 217px;
   }
 `
 
@@ -61,6 +64,9 @@ export const Nota = styled.div`
   img {
     width: 21px;
     height: 21px;
-    object-fit: contain;
   }
+`
+
+export const BotaoContainer = styled.div`
+  margin-top: auto;
 `
